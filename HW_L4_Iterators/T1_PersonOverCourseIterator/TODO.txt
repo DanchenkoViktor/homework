@@ -1,0 +1,25 @@
+Даны классы Person, SchoolJournal.
+Класс SchoolJournal хранит список объектов Person.
+
+Класс SchoolJournal содержит метод courseIterator, который возвращает класс PersonIteratorOverCourse.
+
+Реализовать класс PersonIteratorOverCourse, который реализует интерфейс Iterator<Person>
+
+Метод hasNext возвращает true, если в списке есть студент на курсе, равном courseNumber.
+Иначе, false
+
+Метод next возвращает объект-студент, у которого курс равен courseNumber.
+Иначе, NoSuchElementException
+
+Метод remove удалит студента, которого вернул предыдущий вызов next.
+Иначе, IllegalStateException
+
+Конструктор
+
+PersonIteratorOverCourse(int courseNumber)
+
+Критерий приемки
+
+1. !!! Классы SchoolJournal & Person нельзя модифицировать!
+
+Ссылка на классы SchoolJournal & Person: ref
