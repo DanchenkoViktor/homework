@@ -13,6 +13,31 @@ public class TreeHelper {
      * @param array - array that contains tree.
      */
     public static int getLevelSum(Integer[] array, int level) {
-        throw new RuntimeException("NOT IMPLEMENTED!!!");
+        int[] sum = new int[getHeight(array) + 1];
+        int index = 0;
+
+        while (index < array.length) {
+            for (int i = 0; i < (getHeight(array) + 1); i++) {
+                int iter = 0;
+                while (iter < getCountElementFromLevel(i) && index < array.length) {
+                    int delta = array[index] == null ? 0 : array[index];
+                    sum[i] += delta;
+                    index++;
+                    iter++;
+                }
+            }
+            if (index < getCountElementFromLevel(index))
+                break;
+        }
+
+        return sum[level];
+    }
+
+    private static int getCountElementFromLevel(int level) {
+        return (int) Math.pow(2, level);
+    }
+
+    private static int getHeight(Integer[] data) {
+        return (int) Math.round(Math.log(data.length + 1) / Math.log(2) + 1);
     }
 }
